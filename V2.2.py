@@ -4,9 +4,9 @@
 
 
 #begin_inputs
-dia = 12
-mes = 11
-ano = 2016
+dia = int(input("Digite o dia: "))
+mes = int(input("Digite o mes: "))
+ano = int(input("Digite o ano: "))
 
 #end_inputs
 
