@@ -1,4 +1,6 @@
+
 public class Mainv3 {
+
     public static void main(String[] args) {
         int dia = 1;
         int mes = 1;
@@ -11,10 +13,10 @@ public class Mainv3 {
                 while (dia <= 30) {
                     System.out.println(dia + '/' + mes + '/' + ano);
                     dia += 1;
-                mes += 1;
-            ano += 1;
+                    mes += 1;
+                    ano += 1;
                 }
             }
         }
     }
-} 
+}
