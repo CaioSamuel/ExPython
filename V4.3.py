@@ -4,7 +4,7 @@
 
 
 #begin_inputs
-mes = int(input("Digite um número (1 a 12): "))
+mes = int(input("Digite um numero (1 a 12): "))
 
 #end_inputs
 

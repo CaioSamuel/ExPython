@@ -3,13 +3,10 @@
 # @aid V4.2
 
 #begin_inputs
-idades = []
+
+#end_inputs
 for i in range(10):
     idade = int(input(f"Digite a idade da pessoa {i+1}: "))
-    idades.append(idade)
-#end_inputs
-
-maiores = 0
 for idade in idades:
     if idade >= 18:
         maiores += 1
