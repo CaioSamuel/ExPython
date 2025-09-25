@@ -5,10 +5,10 @@
 #begin_inputs
 
 #end_inputs
+maiores = 0
 for i in range(10):
-    idade = int(input(f"Digite a idade da pessoa {i+1}: "))
-for idade in idades:
-    if idade >= 18:
+    idade = int(input(f"Digite a idade da pessoa: "))
+    if idade > 18:
         maiores += 1
 
 print(maiores)
