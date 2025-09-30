@@ -4,9 +4,9 @@
 
 
 #begin_inputs
-minutos = 0
-#end_inputs
 
+#end_inputs
+minutos = 0
 distancia_tartaruga = 500
 
 vel_tartaruga = 1

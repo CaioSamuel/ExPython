@@ -4,8 +4,8 @@
 
 
 #begin_inputs
-x = int(input("Digite o numero: "))
-y = int(input("Digite o numero: "))
+x = 3
+y = 8
 #end_inputs
 
 if x > y:

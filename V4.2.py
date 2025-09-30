@@ -3,10 +3,10 @@
 # @aid V4.2
 
 #begin_inputs
+#end_inputs
 maiores = 0
 for n in range(10):
-    idade = int(input("Digite a idade da pessoa: "))
-#end_inputs
-    if idade > 18:
+    idade = int(input())
+    if idade >= 18:
         maiores += 1
 print(maiores)
