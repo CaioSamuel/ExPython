@@ -13,13 +13,13 @@ crescimento_cm = hab_cm + (0.03 * hab_cm)
 hab_Parnamirim = 250000
 crescimento_parnamirim = hab_Parnamirim + (0.01 * hab_Parnamirim)
 #end_inputs
-
-while (crescimento + crescimento_cm < crescimento_parnamirim):
+meses = 1
+while (crescimento + crescimento_cm <= crescimento_parnamirim):
     hab_Taipu += (0.10 * hab_Taipu)
     hab_cm += (0.03 * hab_cm)
     hab_Parnamirim += (0.01 * hab_Parnamirim)
-
     if (hab_Taipu + hab_cm) >= hab_Parnamirim:
-        print("Cm e Taipu são mais populosas que parnamirim com {} habitantes, e Parnamirim com {} habitantes".format(int(hab_Taipu + hab_cm), int(hab_Parnamirim)))
+        print(meses)
         break
+    meses += 1
 	
