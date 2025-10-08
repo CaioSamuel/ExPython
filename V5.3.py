@@ -4,22 +4,26 @@
 
 
 #begin_inputs
+
+#end_inputs
 hab_Taipu = 12000
-crescimento = hab_Taipu + (0.10 * hab_Taipu)
+crescimento = 1.10
 
 hab_cm = 73000
-crescimento_cm = hab_cm + (0.03 * hab_cm)
+crescimento_cm = 1.03
 
 hab_Parnamirim = 250000
-crescimento_parnamirim = hab_Parnamirim + (0.01 * hab_Parnamirim)
-#end_inputs
-meses = 1
-while (crescimento + crescimento_cm <= crescimento_parnamirim):
-    hab_Taipu += (0.10 * hab_Taipu)
-    hab_cm += (0.03 * hab_cm)
-    hab_Parnamirim += (0.01 * hab_Parnamirim)
-    if (hab_Taipu + hab_cm) >= hab_Parnamirim:
-        print(meses)
-        break
-    meses += 1
-	
+crescimento_parnamirim = 1.01
+ano = 2018
+
+while hab_Parnamirim >= hab_cm or hab_Parnamirim >= hab_Taipu:
+    hab_cm = round(hab_cm * crescimento_cm)
+    hab_Taipu = round(hab_Taipu * crescimento)
+    hab_Parnamirim = round(hab_Parnamirim * crescimento_parnamirim)
+    ano += 1
+
+print(f"Parnamirim: {ano}")
+print(f"Populaçao Parnamirim: {hab_Parnamirim}")
+print(f"Populaçao Ceará mirim: {hab_cm}")
+print(f"Populaçao Taipu: {hab_Taipu}")
+
