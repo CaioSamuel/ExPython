@@ -22,7 +22,7 @@ while hab_Parnamirim >= hab_cm or hab_Parnamirim >= hab_Taipu:
     hab_Parnamirim = round(hab_Parnamirim * crescimento_parnamirim)
     ano += 1
 
-print(f"Parnamirim: {ano}")
+print(f"Parnamirim sera a terceira cidade em: {ano}")
 print(f"Populaçao Parnamirim: {hab_Parnamirim}")
 print(f"Populaçao Ceará mirim: {hab_cm}")
 print(f"Populaçao Taipu: {hab_Taipu}")
