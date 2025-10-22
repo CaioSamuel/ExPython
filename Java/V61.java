@@ -1,3 +1,4 @@
+package Java;
 import java.util.Random;
 public class V61 {
     public static void main(String[] args) {
