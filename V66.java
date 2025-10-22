@@ -19,8 +19,9 @@ public class V66 {
             tent++;
 
             if (palp == num) {
-                System.out.println("Parabens! Voce acertou, o numero era: ")
+                System.out.println("Parabens! Voce acertou, o numero era: ");
             }
         }
+        entrada.close();
     }
 }   
