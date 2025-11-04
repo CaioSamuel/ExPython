@@ -13,10 +13,5 @@ def consultar_telefone(nome):
             return contato['telefone']
     return "Contato não encontrado."
 
-adicionar_contato("James Greene", "(777) 791-7076")
-adicionar_contato("Leon Tyler", "(516) 663-6922")
-adicionar_contato("Melvin Meyer", "(613) 442-6546")
-
-print(consultar_telefone("James Greene"))
-print(consultar_telefone("Leon Tyler"))
-print(consultar_telefone("Melvin Meyer"))
+adicionar_contato("Russell Harrison", "(940) 211-3349")
+print(consultar_telefone("Russell Harrison"))
