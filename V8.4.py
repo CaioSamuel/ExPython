@@ -31,4 +31,3 @@ while pergunta != "3":
     else:
         print("Escolha inválida")
     pergunta = input("O que você deseja fazer? ")
-close()

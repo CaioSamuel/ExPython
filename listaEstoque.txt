@@ -1,0 +1,2 @@
+Chocolate; 2; 10
+Pao; 2; 100
