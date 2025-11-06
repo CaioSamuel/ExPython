@@ -5,6 +5,8 @@
 nome_arquivo = "cpf.txt"
 
 def adicionarCPF(cpf, nome):
+    #with: forma de gerenciar recursos, abre e fecha automaticamente    
+    #as: Dá nome ao recurso aberto pelo with
     with open(nome_arquivo, "a") as f:
         f.write("{}; {}\n".format(cpf, nome))
 
