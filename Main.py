@@ -1,22 +1,27 @@
 import os
 
+# Corrigir nome do arquivo para corresponder ao arquivo existente
+arquivo_estoque = "listaEstoque.txt"
+arquivo_funcionarios = "listaFuncionario.txt"  # removido o 's' extra
+
+# Usar caminho absoluto para garantir que está salvando no lugar correto
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-nome_arquivo = os.path.join(BASE_DIR, "listaEstoque.txt")
-arquivo_funcionarios = os.path.join(BASE_DIR, "listaFuncionario.txt")
+arquivo_estoque = os.path.join(BASE_DIR, arquivo_estoque)
+arquivo_funcionarios = os.path.join(BASE_DIR, arquivo_funcionarios)
 
 #funções
 
 def adicionarEstoque(produto, prUnit, qtd):
     try:
-        with open(nome_arquivo, "a", encoding="utf-8") as e:
+        with open(arquivo_estoque, "a", encoding="utf-8") as e:
             e.write("{}; {}; {}\n".format(produto, prUnit, qtd))
-        print(f"Estoque salvo em: {nome_arquivo}")
+        print(f"Estoque salvo em: {arquivo_estoque}")
     except Exception as exc:
         print("Erro ao salvar estoque:", exc)
 
-def lerEstoque(nome_arquivo):
+def lerEstoque(arquivo_estoque):
     try:
-        with open(nome_arquivo, "r", encoding="utf-8") as e:
+        with open(arquivo_estoque, "r", encoding="utf-8") as e:
             for linha in e:
                 print(linha.strip())
     except FileNotFoundError:
@@ -27,7 +32,10 @@ def adicionarFuncionarios(nome, idade, funcao):
     try:
         with open(arquivo_funcionarios, "a", encoding="utf-8") as f:
             f.write("{}; {}; {}\n".format(nome, idade, funcao))
+            f.flush()  # força escrita no disco
+            os.fsync(f.fileno())  # garante que OS salvou no disco
         print(f"Funcionário salvo em: {arquivo_funcionarios}")
+        print("Dados salvos com sucesso!")
     except Exception as exc:
         print("Erro ao salvar funcionário:", exc)
 
@@ -56,7 +64,7 @@ while True:
         qtd = input("Digite a quantidade de produtos no estoque: ")
         adicionarEstoque(produto, prUnit, qtd)
     elif pergunta == "2":
-        lerEstoque(nome_arquivo)
+        lerEstoque(arquivo_estoque)
     elif pergunta == "3":
         nome = input("Digite o nome do funcionário: ")
         idade = input("Digite a idade do funcionário: ")
