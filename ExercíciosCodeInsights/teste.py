@@ -1,7 +1,8 @@
-def fatorial(n):
-    fat = 1
-    for i in range(2, n + 1):
-        fat *= i
-    return fat
+numeros = []
 
-print(fatorial(5))
+for n in range(10):
+    num = int(input("Digite o número: "))
+    if num % 2 == 0:
+        numeros.append(num)
+
+print(numeros)
