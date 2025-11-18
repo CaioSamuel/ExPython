@@ -2,8 +2,6 @@
 # @sid 20251174010007
 # @aid V8.5
 
-contatos = "contatos.txt"
-
 def adicionar_contato(nome, telefone):
     with open(contatos, "a") as f:
         f.write(f'{nome},{telefone}')
@@ -12,7 +10,10 @@ def consultar_contato(contatos):
     with open(contatos, "r") as f:
         f.readlines()
         for contato in contatos:
+            #Strip: Método de String que remove espaços em branco e quebras de linhas
             print(contato.strip())
+
+contatos = "contatos.txt"
 
 print("_______________________")
 print("1 - Adicionar Contato")
