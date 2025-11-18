@@ -1,2 +1,3 @@
 Chocolate; 2; 10
 Pao; 2; 100
+Arthur; 1000; 1
