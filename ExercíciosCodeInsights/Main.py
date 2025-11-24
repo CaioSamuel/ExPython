@@ -48,6 +48,52 @@ def verFuncionarios(arquivo):
     except FileNotFoundError:
         print("Arquivo de funcionários não encontrado.")
 
+def buscarProduto(arquivo_estoque):
+    nome_busca = input("Digite o nome do produto: ").strip().lower()
+    encontrado = False
+
+    try:
+        with open(arquivo_estoque, "r", encoding="utf-8") as e:
+            for linha in e:
+                dados = linha.split(";")
+                nome_produto = dados[0].strip().lower()
+
+                if nome_produto == nome_busca:
+                    print(f"Nome: {dados[0].strip()}")
+                    print(f"Valor: R$ {dados[1].strip()}")
+                    print(f"Quantidade: {dados[2].strip()}")
+                    encontrado = True
+                    break
+
+        if not encontrado:
+            print("Produto não encontrado!")
+
+    except FileNotFoundError:
+        print("Arquivo não encontrado!")
+
+def buscarFuncionario(arquivo_funcionarios):
+    nome_busca = input("Digite o nome do funcionário: ").strip().lower()
+    encontrado = False
+
+    try:
+        with open(arquivo_funcionarios, "r", encoding="utf-8") as e:
+            for linha in e:
+                dados = linha.split(";")
+                nome_funcionario = dados[0].strip().lower()
+
+                if nome_funcionario == nome_busca:
+                    print(f"Nome: {dados[0].strip()}")
+                    print(f"Idade: {dados[1].strip()} anos")
+                    print(f"Função: {dados[2].strip()}")
+                    encontrado = True
+                    break
+
+        if not encontrado:
+            print("Funcionário não encontrado!")
+
+    except FileNotFoundError:
+        print("Arquivo não encontrado!")
+
 #funcionamento do sistema (menu dentro do loop)
 while True:
     print("_______________________")
@@ -59,20 +105,52 @@ while True:
     pergunta = input("O que você deseja fazer? ").strip()
 
     if pergunta == "1":
+        print("\n")
+        print("________________")
+        print("\n")
         produto = input("Digite o nome do produto: ")
         prUnit = input("Digite o preço unitário: ")
         qtd = input("Digite a quantidade de produtos no estoque: ")
         adicionarEstoque(produto, prUnit, qtd)
+        print("________________")
+
     elif pergunta == "2":
-        lerEstoque(arquivo_estoque)
+        print("\n")
+        print("____________")
+        print("\n")
+        print("1 - Ver produto específico")
+        print("2 - Ver lista de produtos completa")
+        pergunta2 = input("Digite o que você deseja fazer: ")
+        if pergunta2 == "1":
+            buscarProduto(arquivo_estoque)
+        elif pergunta2 == "2":
+            lerEstoque(arquivo_estoque)
+        print("____________")
+
     elif pergunta == "3":
+        print("\n")
+        print("_________________")
+        print("\n")
         nome = input("Digite o nome do funcionário: ")
         idade = input("Digite a idade do funcionário: ")
         funcao = input("Digite a função do funcionário: ")
         adicionarFuncionarios(nome, idade, funcao)
+        print("_________________")
+
     elif pergunta == "4":
-        verFuncionarios(arquivo_funcionarios)
+        print("\n")
+        print("__________")
+        print("1 - Ver funcionário específico")
+        print("2 - Ver lista de funcionários completa")
+        pergunta3 = input("Digite o que você deseja fazer: ")
+        if pergunta3 == "1":
+            buscarFuncionario(arquivo_funcionarios)
+        elif pergunta3 == "2":
+            verFuncionarios(arquivo_funcionarios)
+        print("__________")
+
     elif pergunta == "5":
         break
+
     else:
         print("Escolha inválida")
