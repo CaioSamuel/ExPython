@@ -1,3 +1,5 @@
 Chocolate; 2; 10
 Pao; 2; 100
 Arthur; 1000; 1
+Arthur; 100; 10
+Sofocles; 0; 1000

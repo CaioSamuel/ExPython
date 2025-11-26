@@ -15,10 +15,9 @@ def adicionarEstoque(produto, prUnit, qtd):
     try:
         with open(arquivo_estoque, "a", encoding="utf-8") as e:
             e.write("{}; {}; {}\n".format(produto, prUnit, qtd))
-        print(f"Estoque salvo em: {arquivo_estoque}")
+        print(f"Dados salvo em: {arquivo_estoque}")
     except Exception as exc:
         print("Erro ao salvar estoque:", exc)
-
 def lerEstoque(arquivo_estoque):
     try:
         with open(arquivo_estoque, "r", encoding="utf-8") as e:
@@ -47,50 +46,40 @@ def verFuncionarios(arquivo):
                 print(linha.strip())
     except FileNotFoundError:
         print("Arquivo de funcionários não encontrado.")
-
 def buscarProduto(arquivo_estoque):
     nome_busca = input("Digite o nome do produto: ").strip().lower()
     encontrado = False
-
     try:
         with open(arquivo_estoque, "r", encoding="utf-8") as e:
             for linha in e:
                 dados = linha.split(";")
                 nome_produto = dados[0].strip().lower()
-
                 if nome_produto == nome_busca:
                     print(f"Nome: {dados[0].strip()}")
                     print(f"Valor: R$ {dados[1].strip()}")
                     print(f"Quantidade: {dados[2].strip()}")
                     encontrado = True
                     break
-
         if not encontrado:
             print("Produto não encontrado!")
-
     except FileNotFoundError:
         print("Arquivo não encontrado!")
-
 def buscarFuncionario(arquivo_funcionarios):
     nome_busca = input("Digite o nome do funcionário: ").strip().lower()
     encontrado = False
-
     try:
         with open(arquivo_funcionarios, "r", encoding="utf-8") as e:
             for linha in e:
                 dados = linha.split(";")
                 nome_funcionario = dados[0].strip().lower()
-
                 if nome_funcionario == nome_busca:
                     print(f"Nome: {dados[0].strip()}")
                     print(f"Idade: {dados[1].strip()} anos")
                     print(f"Função: {dados[2].strip()}")
                     encontrado = True
                     break
-
         if not encontrado:
             print("Funcionário não encontrado!")
-
     except FileNotFoundError:
         print("Arquivo não encontrado!")
 
