@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 #Rotas
 @app.route('/')
-def ola_mundo():
+def gerencia_usuarios():
     titulo = "Gestão de Usuários"
     usuarios = [
         {"nome": "Guilherme", "membro_ativo": True},
@@ -16,7 +16,7 @@ def ola_mundo():
 
 @app.route('/sobre')
 def pagina_sobre():
-    return 'Programador'
+    return 'Página Sobre'
 
 #Execução
 app.run(debug = True)
