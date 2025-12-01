@@ -65,6 +65,7 @@ def buscarProduto(arquivo_estoque):
     except FileNotFoundError:
         print("Arquivo não encontrado!")
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 def buscarFuncionario(arquivo_funcionarios):
     nome_busca = input("Digite o nome do funcionário: ").strip().lower()
     encontrado = False
@@ -84,6 +85,10 @@ def buscarFuncionario(arquivo_funcionarios):
     except FileNotFoundError:
         print("Arquivo não encontrado!")
 
+=======
+
+    
+>>>>>>> Stashed changes
 =======
 
     
