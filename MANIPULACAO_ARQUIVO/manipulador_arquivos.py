@@ -32,9 +32,24 @@ def calcular_proximo_id(carros):
         ids.append(c['id'])
     return max(ids, default=0) + 1
 
-def buscar_carro_pór_id(id):
+def buscar_carro_por_id(id):
     carros = ler_carros()
     for n in carros:
         if n['id'] == id:
             return n
     return None
+
+def remover_carro(id):
+    antiga_lista = ler_carros()
+    nova_lista = []
+    for c in antiga_lista:
+        if c['id'] != id:
+            nova_lista.append(c)
+    salvar_carros(nova_lista)
+
+def atualizar_carro(id, novos_dados):
+    carros = ler_carros()
+    for indice, c in enumerate(carros):
+        if c['id'] == id:
+            novos_dados['id'] = id
+            carros[indice] = novos_dados
